@@ -16,7 +16,7 @@
 
 - [ ] When is they birthday an account has a  birthday hat.
 
-  ## Administrators
+## Administrators
 
   
 
