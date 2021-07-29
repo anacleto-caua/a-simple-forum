@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+main{
+    width: 60%;
+    margin: 25px 0 25px 20%;
+    padding: 25px 10px;
+    background-color: #fff;
+    border: 2px solid #4f4fee;
+    font-family: "Open Sans";
+}
+
+main h1, main h2, main h3{
+    font-family: "Press Start 2P";
+    text-align: center;
+}
+
+main h1{
+    font-size: 2.3em ;
+    color: #4f4fee;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 5px 0 25px 0;
+}
+
+a{
+    color: #000;
+    text-decoration: none;
+}
+
+.link{
+    font-family: "Press Start 2P";
+    color: #4f4fee;
+    text-decoration: none;
+}
+
+section{
+    border: 2px solid #4f4fee;
+}
+
+.section-name{
+    background-color: #4f4fee;
+    color: #fff;
+    padding: 15px 0;
+}
+
+.post{
+    font-family: "Press Start 2P";
+}
