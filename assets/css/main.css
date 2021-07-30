@@ -45,5 +45,48 @@ section{
 }
 
 .post{
+    width: 98%;
+    margin: 25px 0;
+    margin-left: 1%;
     font-family: "Press Start 2P";
+    border: 2px solid #4f4fee;
+}
+
+.post-infos{
+    height: 50px;
+    overflow: hidden;
+    background-color: #4f4fee;
+
+}
+
+.post-title{
+    text-align: center;
+    padding: 15px 0;
+}
+
+.post-content{
+    text-indent: 15px;
+    padding: 10px;
+}
+
+.infos{
+    height: 50px;
+    padding: 5px 5px;
+}
+
+.infos img{
+    width: 50px;
+    display: inline-block;
+}
+
+.infos .username{
+    line-height: 50px;
+}
+
+.infos .date-time{
+    line-height: initial;
+    width: fit-content;
+    text-align: center;
+    font-size: 0.8em;
+    float: right;
 }

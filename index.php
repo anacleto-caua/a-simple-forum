@@ -21,12 +21,23 @@
 
             <a href="">
                 <div class="post">
-                    <div class="post-title">
+                    <h2 class="post-title">
                         Mc Donald's is really overrated!
-                    </div>
+                    </h2>
                     <div class="post-content">
                         Their bread look like sand, the meat is almost soy and the sauces tasty like plastic. Yes a have eated plastic some time ago.
                         <a class="link" href="">HERE</a>
+                    </div>
+                    <div class="infos">
+                        <img src="images/profiles-icons/icon.jpg" alt="">
+                        <span class="username">
+                            usernamexxx
+                        </span>
+                        <span class="date-time">
+                            27/09/2021
+                            <br>
+                            15:35
+                        </span>
                     </div>
                 </div>
             </a>
