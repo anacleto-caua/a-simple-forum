@@ -8,6 +8,7 @@ main{
     background-color: #fff;
     border: 2px solid #4f4fee;
     font-family: "Open Sans";
+    height: unset;
 }
 
 main h1, main h2, main h3{

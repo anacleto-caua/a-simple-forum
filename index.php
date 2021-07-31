@@ -12,7 +12,17 @@
     <?php require 'assets/html/header.html'; ?>
     <main>
         <h1>
-            Welcome stranger
+            <?php
+                if(isset($_SESSION) == false){
+                    session_start();
+                }
+                if(isset($_SESSION['USERNAME'])){
+                    echo 'Welcome ' . $_SESSION['USERNAME'];
+                }
+                else{
+                    echo "Welcome stranger";
+                }
+            ?>
         </h1>
         <section class="popular">
             <h2 class="section-name">
@@ -41,7 +51,6 @@
                     </div>
                 </div>
             </a>
-            
         </section>
     </main>
     <?php require 'assets/html/footer.html'; ?>

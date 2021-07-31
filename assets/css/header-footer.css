@@ -26,6 +26,27 @@ header h1{
     text-transform: uppercase;
 }
 
+header aside{
+    color: #4f4fee;
+    background-color: #fff;
+    width: fit-content;
+    padding: 5px 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+header aside:hover{
+    background-color: #4f4fee;
+    color: #fff;
+}
+
+header aside a{
+    color: unset;
+    text-decoration: none;
+}
+
+
 header nav{
     border-top: 2px solid #fff;
     width: 100%;
@@ -51,8 +72,8 @@ header nav ul a{
     color: #fff;
 }
 
-header nav ul li:nth-child(4){
-    border-right: none;
+header nav ul a:last-child li{
+    border-right: 0;
 }
 
 header nav ul li:hover{
@@ -78,4 +99,3 @@ footer p{
     width: 100%;
     font-size: 1em;
 }
-
