@@ -30,7 +30,7 @@
             </div>
 
             <div class="input-label">
-                <label>Date of Birth</abbr></label>
+                <label>Date of Birth</label>
                 <input type="date" name="bithday">
             </div>
 
