@@ -85,11 +85,18 @@ $confirm_password_errors = array();
                     array_push($confirm_password_errors, "Passwords needs to be equal!");
                 }
 
-                if(count($username_errors) == 0 && count($password_errors) == 0){
-                    $query = "SELECT * FROM `user` WHERE username='$username' AND password='$password'";
-                    $result = $mysqli->query($query);
-                    $count = $result->num_rows;
-
+                #------------------------------------NOTE---------------------------------
+                #should I use array_merge() to concatenete this arrays and count just one?
+                if(count($username_errors) == 0 &&
+                    count($dob_errors) == 0 &&
+                    count($email_errors) == 0 &&
+                    count($password_errors) == 0 &&
+                    count($confirm_password_errors) == 0){
+                        
+                    $query = "INSERT INTO `user` (`username`, `email`, `password`, `birthday`)
+                                            VALUES ('$username','$email','$password','$dob')";
+                    $mysqli->query($query);
+                    header("location: login.php");
                 }
             }
         ?>
@@ -102,25 +109,25 @@ $confirm_password_errors = array();
 
             <div class="input-label">
                 <label>Username </label>
-                <input type="text" name="username" value=" <?php defineValue('username'); ?> ">
+                <input type="text" name="username" value="<?php defineValue('username'); ?>">
                 <?php printErrors($username_errors); ?>
             </div>
 
             <div class="input-label">
                 <label>Date of Birth </label>
-                <input type="date" name="birthday" value=" <?php defineValue('birthday'); ?> ">
+                <input type="date" name="birthday" value="<?php defineValue('birthday'); ?>">
                 <?php printErrors($dob_errors); ?>
             </div>
 
             <div class="input-label">
                 <label>Email </label>
-                <input type="email" name="email" value=" <?php defineValue('email'); ?> ">
+                <input type="email" name="email" value="<?php defineValue('email'); ?>">
                 <?php printErrors($email_errors); ?>
             </div>
 
             <div class="input-label">
                 <label>Password </label>
-                <input type="password" name="password" value=" <?php defineValue('password'); ?> ">
+                <input type="password" name="password" value="<?php defineValue('password'); ?>">
                 <?php printErrors($password_errors); ?>
             </div>
 

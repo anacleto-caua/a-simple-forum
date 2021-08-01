@@ -1,3 +1,11 @@
+<?php
+function defineValue($name){
+    if(isset($_POST[$name])){
+        echo $_POST[$name];
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,8 +64,8 @@
 
             <div class="input-label">
                 <label> Username </label>
-                <input type="text" name="username" id="username">
-                <span class="field-error" id="username-field-error">
+                <input type="text" name="username" value="<?php defineValue('username');?>">
+                <span class="field-error">
                     <?php
                         if(isset($_POST['submit'])){
                             foreach ($username_errors as $error){
@@ -70,8 +78,8 @@
 
             <div class="input-label">
                 <label> Password </label>
-                <input type="password" name="password" id="password">
-                <span class="field-error" id="password-field-error">
+                <input type="password" name="password">
+                <span class="field-error">
                     <?php
                         if(isset($_POST['submit'])){
                             foreach ($password_errors as $error){
