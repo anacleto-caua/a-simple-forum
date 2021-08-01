@@ -22,21 +22,16 @@ input:focus{
     border: 3px solid #4f4fee;
 }
 
-.center-submit{
-    margin: 15px 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
 input[type="submit"]{
     width: 150px;
-    margin: auto;
     background-color: #4f4fee;
     color: #fff;
     font-size: 0.9em;
     padding: 5px;
     border: 5px solid #4f4fee;
+    display: block;
+    margin: 15px auto;
+    line-height: 100%;
 }
 
 input[type="submit"]:hover{

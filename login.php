@@ -58,7 +58,6 @@
                 <label> Username </label>
                 <input type="text" name="username" id="username">
                 <span class="field-error" id="username-field-error">
-                    <!--ERRORS HERE-->
                     <?php
                         if(isset($_POST['submit'])){
                             foreach ($username_errors as $error){
@@ -73,7 +72,6 @@
                 <label> Password </label>
                 <input type="password" name="password" id="password">
                 <span class="field-error" id="password-field-error">
-                    <!--ERRORS HERE-->
                     <?php
                         if(isset($_POST['submit'])){
                             foreach ($password_errors as $error){
@@ -84,10 +82,7 @@
                 </span>
             </div>
 
-            <div class="center-submit">
-                <input type="submit" value="Login" name="submit">
-            </div>
-           
+            <input type="submit" value="Login" name="submit">
         </form>
         <div class="change-form">
                 Doesn't have an account?
