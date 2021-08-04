@@ -13,10 +13,9 @@
     <main>
         <h1>
             <?php
-                if(isset($_SESSION) == false){
-                    session_start();
-                }
-                if(isset($_SESSION['USERNAME'])){
+                require '_require/session-manager.php';
+
+                if(isLogged()){
                     echo 'Welcome ' . $_SESSION['USERNAME'];
                 }
                 else{
@@ -36,7 +35,7 @@
                     </h2>
                     <div class="post-content">
                         Their bread look like sand, the meat is almost soy and the sauces tasty like plastic. Yes a have eated plastic some time ago.
-                        <a class="link" href="">HERE</a>
+                        <a class="link" href="" target="_blank">link test</a>
                     </div>
                     <div class="infos">
                         <img src="images/profiles-icons/icon.jpg" alt="">

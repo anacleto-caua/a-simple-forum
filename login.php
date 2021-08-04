@@ -19,7 +19,7 @@ function defineValue($name){
 </head>
 <body>
     <?php require 'assets/html/header.html'; ?>
-    <?php require 'mysql/connect.php'; ?>
+    <?php require '_require/connect.php'; ?>
     <main>
         <?php
             if(isset($_POST['submit'])){
@@ -44,10 +44,14 @@ function defineValue($name){
                     $result = $result->fetch_assoc();
 
                     if($count > 0) {
-                        session_start();
-                        $_SESSION['USERNAME'] = $username;
-                        $_SESSION['USER_ROLE'] = $result['role'];
-
+                        require('_require/session-manager.php');
+                        
+                        if($_POST['remember']){
+                            setLogin($username, $result['role'], true);
+                        }else{
+                            setLogin($username, $result['role']);
+                        }
+                        
                         header("location: ./");
                     }
                 }
@@ -57,14 +61,11 @@ function defineValue($name){
         <h1>
             You can login here:
         </h1>
-        <span class="field-error" id="submit-field-error">
-                <!--ERRORS HERE-->
-        </span>
         <form action="login.php" method="POST">
 
             <div class="input-label">
                 <label> Username </label>
-                <input type="text" name="username" value="<?php defineValue('username');?>">
+                <input type="text" name="username" value="<?php defineValue('username'); ?>">
                 <span class="field-error">
                     <?php
                         if(isset($_POST['submit'])){
@@ -90,6 +91,11 @@ function defineValue($name){
                 </span>
             </div>
 
+            <div class=" input-label checkbox">
+                <label id="test">Remember me:</label>
+                <input type="checkbox" name="remember">
+            </div>
+
             <input type="submit" value="Login" name="submit">
         </form>
         <div class="change-form">
@@ -99,11 +105,6 @@ function defineValue($name){
             </a>
         </div>
         
-        <!--
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-            <script src="assets/js/form.js"></script>
-        -->
-       
     </main>
     <?php require 'assets/html/footer.html'; ?>
 </body>

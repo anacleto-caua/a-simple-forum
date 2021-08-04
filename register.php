@@ -5,7 +5,7 @@ function printErrors($errors_array){
             echo $error;
             echo "<br>";
         }
-    echo"</span>";
+    echo "</span>";
 }
 
 function defineValue($name){
@@ -34,7 +34,7 @@ $confirm_password_errors = array();
 </head>
 <body>
     <?php require 'assets/html/header.html'; ?>
-    <?php require 'mysql/connect.php'; ?>
+    <?php require '_require/connect.php'; ?>
     <main>
         <?php
             if(isset($_POST['submit'])){
@@ -45,7 +45,10 @@ $confirm_password_errors = array();
                 if(strlen($username) < 5){
                     array_push($username_errors, "Username need at least 5 characters!");
                 }
-                
+                if(strlen($username) > 15){
+                    array_push($username_errors, "Username can't be longer than 15 characters!");
+                }
+
                 $query = "SELECT * FROM `user` WHERE username = '$username'";
                 $result = $mysqli->query($query);
                 $count = $result->num_rows;

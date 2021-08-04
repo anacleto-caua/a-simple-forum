@@ -58,3 +58,19 @@ input[type="submit"]:hover{
 .change-form a:hover{
     color: #2525f8;
 }
+
+.checkbox{
+    height: min-content;
+}
+
+.checkbox label{
+    display: inline-block;
+    width: max-content;
+    height: 15px;
+}
+
+.checkbox input{
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+}
